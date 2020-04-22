@@ -1,0 +1,6 @@
+framework module Pods_covid19_dashboard_swift {
+  umbrella header "Pods-covid19-dashboard-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

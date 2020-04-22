@@ -11,81 +11,54 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="covid19_dashboard_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of deaths:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zli-Xk-UnB">
-                                <rect key="frame" x="33" y="165" width="256" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FfZ-fX-l8h">
-                                <rect key="frame" x="0.0" y="608" width="414" height="254"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="covid-dashboard" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-nj-za5">
+                                <rect key="frame" x="0.0" y="20" width="414" height="880"/>
+                            </imageView>
+                            <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfZ-fX-l8h">
+                                <rect key="frame" x="0.0" y="660" width="200" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="J2H-J9-SeT"/>
+                                </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recovery Rate: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaB-5y-lkH">
-                                <rect key="frame" x="33" y="242" width="120" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfj-MQ-7tr">
-                                <rect key="frame" x="33" y="213" width="170" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-5m-BWW">
-                                <rect key="frame" x="242" y="166" width="152" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY2-7b-DOT">
-                                <rect key="frame" x="290" y="242" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhy-SQ-JWR">
-                                <rect key="frame" x="280" y="213" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uez-Jc-GCh">
-                                <rect key="frame" x="33" y="121" width="241" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tef-4Q-mw9" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="201" width="374" height="439"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" playsSound="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tef-4Q-mw9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7Aa-uT-U5v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tef-4Q-mw9" secondAttribute="trailing" constant="20" id="7GT-yq-gL8"/>
+                            <constraint firstAttribute="bottom" secondItem="FfZ-fX-l8h" secondAttribute="bottom" constant="20" symbolic="YES" id="8Ju-ec-yJi"/>
+                            <constraint firstItem="FfZ-fX-l8h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DTX-b5-hkD"/>
+                            <constraint firstItem="YOB-nj-za5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G9n-T2-p59"/>
+                            <constraint firstItem="tef-4Q-mw9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="dBO-VR-GKl"/>
+                            <constraint firstItem="YOB-nj-za5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="fXz-gM-Nd9"/>
+                            <constraint firstItem="YOB-nj-za5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qCs-Ak-k1z"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="YOB-nj-za5" secondAttribute="bottom" constant="-38" id="srm-HH-e2a"/>
+                            <constraint firstAttribute="bottom" secondItem="tef-4Q-mw9" secondAttribute="bottom" constant="256" id="yzO-2J-vS8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="countryLabel" destination="Uez-Jc-GCh" id="BF1-qU-ig4"/>
                         <outlet property="countryPicker" destination="FfZ-fX-l8h" id="mzX-WT-Xl4"/>
-                        <outlet property="deathTollLabel" destination="zli-Xk-UnB" id="1VC-tF-Glp"/>
-                        <outlet property="numberOfCasesLabel" destination="vfj-MQ-7tr" id="UhH-d4-Fq3"/>
-                        <outlet property="recoverRateLabel" destination="GaB-5y-lkH" id="DJL-hj-Lpl"/>
-                        <outlet property="totalDeathsCount" destination="d1n-5m-BWW" id="aZw-Gw-wrP"/>
-                        <outlet property="totalInfectedCount" destination="fhy-SQ-JWR" id="EZz-du-b2x"/>
-                        <outlet property="totalRecoveredCount" destination="cY2-7b-DOT" id="N06-oL-Lqe"/>
+                        <outlet property="pieChartView" destination="tef-4Q-mw9" id="D5A-pS-341"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="128.98550724637681" y="122.54464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="covid-dashboard" width="414" height="896"/>
+    </resources>
+    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
 </document>
