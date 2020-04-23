@@ -14,9 +14,9 @@
 		7D295FB2244EDCD100A95ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D295FB1244EDCD100A95ADB /* Assets.xcassets */; };
 		7D295FB5244EDCD100A95ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D295FB3244EDCD100A95ADB /* LaunchScreen.storyboard */; };
 		7D295FC2244EE48400A95ADB /* CovidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D295FC1244EE48400A95ADB /* CovidService.swift */; };
-		7D295FC6244EF60200A95ADB /* CovidData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D295FC5244EF60200A95ADB /* CovidData.swift */; };
+		7D295FC6244EF60200A95ADB /* CovidCountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D295FC5244EF60200A95ADB /* CovidCountryData.swift */; };
 		7D295FCA244F12E800A95ADB /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D295FC9244F12E800A95ADB /* CountryData.swift */; };
-		7D295FCC244F13EA00A95ADB /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D295FCB244F13EA00A95ADB /* CountryService.swift */; };
+		7DC7882624517E11003FC9C8 /* CovidGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7882524517E11003FC9C8 /* CovidGlobalData.swift */; };
 		D33EF215B6546EBEE8639C6D /* Pods_covid19_dashboard_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82840295F0E5DF88504B885D /* Pods_covid19_dashboard_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,9 +31,9 @@
 		7D295FB4244EDCD100A95ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D295FB6244EDCD100A95ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D295FC1244EE48400A95ADB /* CovidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidService.swift; sourceTree = "<group>"; };
-		7D295FC5244EF60200A95ADB /* CovidData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidData.swift; sourceTree = "<group>"; };
+		7D295FC5244EF60200A95ADB /* CovidCountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidCountryData.swift; sourceTree = "<group>"; };
 		7D295FC9244F12E800A95ADB /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
-		7D295FCB244F13EA00A95ADB /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		7DC7882524517E11003FC9C8 /* CovidGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGlobalData.swift; sourceTree = "<group>"; };
 		82840295F0E5DF88504B885D /* Pods_covid19_dashboard_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covid19_dashboard_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1209E19E7B35363D8E300F2 /* Pods-covid19-dashboard-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-covid19-dashboard-swift.debug.xcconfig"; path = "Target Support Files/Pods-covid19-dashboard-swift/Pods-covid19-dashboard-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,9 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				7D295FC1244EE48400A95ADB /* CovidService.swift */,
-				7D295FC5244EF60200A95ADB /* CovidData.swift */,
+				7D295FC5244EF60200A95ADB /* CovidCountryData.swift */,
+				7DC7882524517E11003FC9C8 /* CovidGlobalData.swift */,
 				7D295FC9244F12E800A95ADB /* CountryData.swift */,
-				7D295FCB244F13EA00A95ADB /* CountryService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,12 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC7882624517E11003FC9C8 /* CovidGlobalData.swift in Sources */,
 				7D295FAD244EDCC900A95ADB /* ViewController.swift in Sources */,
 				7D295FA9244EDCC900A95ADB /* AppDelegate.swift in Sources */,
-				7D295FCC244F13EA00A95ADB /* CountryService.swift in Sources */,
 				7D295FCA244F12E800A95ADB /* CountryData.swift in Sources */,
 				7D295FAB244EDCC900A95ADB /* SceneDelegate.swift in Sources */,
-				7D295FC6244EF60200A95ADB /* CovidData.swift in Sources */,
+				7D295FC6244EF60200A95ADB /* CovidCountryData.swift in Sources */,
 				7D295FC2244EE48400A95ADB /* CovidService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,22 +8,32 @@
 
 import Foundation
 
+/**
+ Covid Service delegate to notify the controller to do a ting
+ */
 protocol CovidServiceDelegate {
-    func didUpdateCovidData(_ covidService: CovidService, covidData: CovidData);
+    func didUpdateCountryData(_ covidService: CovidService, covidData: CovidCountryData);
+    func didUpdateGlobalData(_ covidService: CovidService, covidGlobalData: CovidGlobalData);
     func didFailWithError(error: Error)
 }
 
 struct CovidService {
-    let dataUrl = "https://covidapi.info/api/v1/country";
-
+    /**
+     Base URL for all covid related data
+     */
+    let baseUrl = "https://covidapi.info/api/v1";
+    
+    /**
+     Covid Service Delegate
+     */
     var delegate: CovidServiceDelegate?;
     
-    func fetchData(countryCode: String, date: String){
-        let urlString = "\(dataUrl)/\(countryCode)/timeseries/2019-01-01/\(date)";
-        self.performRequest(with : urlString);
-    }
-    
-    func performRequest(with urlString: String){
+    /**
+     Function used to fetch global data (Possible duplicate - probs only need fetchData with some fancy params)
+     */
+    func fetchGlobalCount(){
+        let urlString = "\(baseUrl)/global";
+        
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default);
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -32,30 +42,68 @@ struct CovidService {
                     return;
                 }
                 if let safeData = data {
-                    if let covidData = self.parseJSON(safeData){
-                        self.delegate?.didUpdateCovidData(self, covidData: covidData)
+                    if let data = self.parseCovidGlobalJSON(safeData){
+                        self.delegate?.didUpdateGlobalData(self, covidGlobalData: data)
                     }
                 }
             }
-            
+            task.resume();
+        }
+        
+    }
+    
+    /**
+        Function used to fetch country data (Possible duplicate - probs only need fetchData with some fancy params)
+    */
+    func fetchCountryData(countryCode: String, date: String){
+        let urlString = "\(baseUrl)/country/\(countryCode)/timeseries/2019-01-01/\(date)";
+        
+        if let url = URL(string: urlString){
+            let session = URLSession(configuration: .default);
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    self.delegate?.didFailWithError(error: error!)
+                    return;
+                }
+                if let safeData = data {
+                    if let data = self.parseCovidCountryJSON(safeData){
+                        self.delegate?.didUpdateCountryData(self, covidData: data)
+                    }
+                }
+            }
             task.resume();
         }
     }
     
-    func parseJSON(_ data: Data) -> CovidData? {
+    /**
+     Parse covid country data (Possible duplicate)
+     */
+    func parseCovidCountryJSON(_ data: Data) -> CovidCountryData? {
         let decoder = JSONDecoder();
         do {
-            let decodedData = try decoder.decode(CovidData.self, from: data)
-//            print(decodedData);
-//            print(decodedData.result.last!.confirmed)
-//            print(decodedData.result.last!.recovered)
-//            print(decodedData.result.last!.deaths)
+            let decodedData = try decoder.decode(CovidCountryData.self, from: data)
             return decodedData;
         }
         catch {
             self.delegate?.didFailWithError(error: error)
             return nil;
         }
-            
+        
+    }
+    
+    /**
+     Parse covid country data (Possible duplicate)
+     */
+    func parseCovidGlobalJSON(_ data: Data) -> CovidGlobalData? {
+        let decoder = JSONDecoder();
+        do {
+            let decodedData = try decoder.decode(CovidGlobalData.self, from: data)
+            return decodedData;
+        }
+        catch {
+            self.delegate?.didFailWithError(error: error)
+            return nil;
+        }
+        
     }
 }

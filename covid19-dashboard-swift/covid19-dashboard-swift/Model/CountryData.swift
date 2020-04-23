@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ Hard coded country date - ideally this should be coming from another service
+ but for ease of use all country options have been manually entered here.
+ */
 struct CountryData{
     let countries = [
             ["AFG": "Afghanistan"],
@@ -36,7 +40,6 @@ struct CountryData{
             ["FRA": "France"],
             ["DEU": "Germany"],
             ["GRC": "Greece"],
-            ["HKG": "Hong Kong"],
             ["HUN": "Hungary"],
             ["ISL": "Iceland"],
             ["IND": "India"],

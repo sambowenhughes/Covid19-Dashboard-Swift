@@ -8,14 +8,17 @@
 
 import Foundation
 
-struct CovidData: Codable {
+/**
+ Covid country date response
+ */
+struct CovidCountryData: Codable {
     let count : Int;
     let result : [Result];
 }
 
 struct Result: Codable{
     let confirmed : Int;
-    let date : String;
+    let date : String?;
     let deaths : Int;
     let recovered : Int;
 }
