@@ -52,10 +52,7 @@ class ViewController: UIViewController  {
      Setup Pie Chart
      */
     func setupChart(){
-        
         pieChartView.entryLabelColor = UIColor.white;
-    
-//        pieChartView.entryLabelFont = UIFont(name: "Helvetica-Bold", size: 15.0 )
         pieChartView.chartDescription?.text = ""
         pieChartView.legend.enabled = false;
         pieChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.easeInBack)
@@ -116,7 +113,7 @@ extension ViewController: CovidServiceDelegate{
         
         DispatchQueue.main.async {
             self.updateChartCenterText("Global Stats")
-            self.dateUpdatedLabel.text = "Data last updated: \(formattedDate)";
+            self.dateUpdatedLabel.text = "DATA LAST UPDATED: \(formattedDate)";
             self.updateChartData();
         }
     }
@@ -137,7 +134,7 @@ extension ViewController: CovidServiceDelegate{
         let formattedDate = formatDate(date!)
         
         DispatchQueue.main.async {
-            self.dateUpdatedLabel.text = "Data last updated: \(formattedDate)";
+            self.dateUpdatedLabel.text = "DATA LAST UPDATED: \(formattedDate)";
             self.updateChartData();
         }
     }
