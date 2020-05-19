@@ -1,17 +1,10 @@
 # Covid19 Dashboard App
 
-Simple Swift app that pulls in data from the [postman covid19 api](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest). This is my first swift app so please be nice with the code.
+Simple Swift app that pulls in data from the [postman covid19 api](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest). This is my first ever swift app so please be nice with the code. Would welcome any advice. 
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-## Demo
-
-<div>
-    <img src="screengrabber.gif" width="300" height="500" />
-</div>
-
 
 ### Prerequisites
 
